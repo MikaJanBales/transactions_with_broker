@@ -37,8 +37,8 @@ steps = [
                 amount             INTEGER            NOT NULL,
                 recipient_id       INTEGER            NOT NULL,
                 is_done            BOOLEAN            NOT NULL,
-                FOREIGN KEY (sender) REFERENCES wallets (id),
-                FOREIGN KEY (recipient) REFERENCES wallets (id)
+                FOREIGN KEY (sender_id) REFERENCES wallets (id),
+                FOREIGN KEY (recipient_id) REFERENCES wallets (id)
             );
         """
     )
