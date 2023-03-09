@@ -1,6 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 
-
 from transactions_with_broker.db.app import BaseModel
 
 
