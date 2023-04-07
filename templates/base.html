@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<ul class="mainmenu">
+    <li><a href="{{ url_for('index') }}">Главная</a></li>
+    <li><a href="{{ url_for('create_balance') }}">Открыть счёт</a></li>
+    <li><a href="{{ url_for('cash_transfer') }}">Пополнить счёт</a></li>
+</ul>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Счета</h1>
+
+{% for client in clients_wallets %}
+    <h3>Баланс клиента {{ client[0].name }} на счёте "{{ client[1].account }}" составляет {{ client[1].cash }} руб</h3>
+{% endfor %}
+
+{% endblock %}

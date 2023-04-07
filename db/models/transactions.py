@@ -1,13 +1,13 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, Float
+from sqlalchemy import Column, Integer, ForeignKey, Float, Boolean
 from sqlalchemy.orm import relationship
 
-from transactions_with_broker.db.app import BaseModel
+from transactions_with_broker.db.config import BaseModel
 from transactions_with_broker.db.models.wallets import Wallets
 
 
 class Transactions(BaseModel):
     __tablename__ = "transactions"
-    id = Column(Integer(), primary_key=True)
+    id = Column(Integer, primary_key=True)
     sender_id = Column(Integer, ForeignKey('wallets.id'))
     amount = Column(Float, nullable=False)
     recipient_id = Column(Integer, ForeignKey('wallets.id'))
@@ -23,3 +23,6 @@ class Transactions(BaseModel):
             'recipient_id': self.recipient_id,
             'is_done': self.is_done,
         }
+
+    # def __repr__(self):
+    #     return f'<Transactions "{self.sender_number}" --- "{self.recipient_number}">'

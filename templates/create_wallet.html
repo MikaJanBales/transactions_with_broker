@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+<form action="" method="post" class="form-contform-contact">
+    <p><label>ФИО: </label><input type="text" name="name" value="" required />
+    <p><label>Номер счёта: </label><input type="number" name="account" min=0 value="" required />
+    <p><label>Пополнить счёт: </label><input type="text" name="cash" step="0.01" min=0 value="" required />
+    <p><input type="submit" value="Открыть счёт" />
+</form>
+
+{% endblock %}

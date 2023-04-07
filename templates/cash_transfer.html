@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Пополнить счёт</h1>
+
+<form action="" method="post" class="form-contform-contact">
+    <p><label>Номер счёта отправителя: </label><input type="number" name="sender_number" min=0 value="" required />
+    <p><label>Сумма: </label><input type="number" name="amount" min=0 value="" required />
+    <p><label>Номер счёта получателя: </label><input type="number" name="recipient_number" min=0 value="" required />
+    <p><input type="submit" value="Пополнить счёт" />
+</form>
+
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+
+{% endblock %}
